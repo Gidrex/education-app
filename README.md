@@ -1,5 +1,5 @@
 # Preview
-A simple mobile app for event ![https://vk.com/club225260005](Фестиваль "Услышь меня, я рядом!").
+A simple mobile app for event [Фестиваль "Услышь меня, я рядом!"](https://vk.com/club225260005).
 
 # Tech task
 - главная страница (static)
