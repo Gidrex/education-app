@@ -1,20 +1,6 @@
 import 'package:flutter/material.dart';
-import 'dart:ffi';
-import 'dart:io';
-import 'package:flutter/material.dart';
-
-typedef RustAdd = Int32 Function(Int32, Int32);
-typedef RustAddDart = int Function(int, int);
 
 void main() {
-  runApp(const MyApp());
-
-  final rustLib = DynamicLibrary.open('rust_lib.so');
-  final RustAdd rustAdd = rustLib
-  .lookup<NativeFunction<RustAdd>>('rust_add')
-  .asFunction<RustAddDart>();
-
-  print('1 + 2 = ${rustAdd(1, 2)}');
   runApp(FestivalScheduleApp());
 }
 
@@ -43,23 +29,22 @@ class FestivalSchedulePage extends StatelessWidget {
           title: "Открытие фестиваля",
           location: "Лекторий 1",
           speaker: "Организатор мероприятия",
-          color: Colors.purple[200],
+          color: Colors.purple[200]!,
         ),
         ScheduleSection(
           time: "11:30-12:30",
           title: "Ярмарка сообществ РЖА",
           location: "Общая зона 'Оpen space'",
           speaker: "Сообщества РЖА",
-          color: Colors.purple[100],
+          color: Colors.purple[100]!,
         ),
-        // Add more sections based on the image provided
-        // ...
+        // Добавь остальные секции согласно изображению
         ScheduleSection(
           time: "15:30-16:00",
           title: "Закрытие фестиваля",
           location: "Лекторий 1",
           speaker: "",
-          color: Colors.purple[200],
+          color: Colors.purple[200]!,
         ),
       ],
     );
