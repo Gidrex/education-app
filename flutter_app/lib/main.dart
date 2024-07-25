@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:ffi';
 import 'dart:io';
+import 'package:flutter/material.dart';
 
 typedef RustAdd = Int32 Function(Int32, Int32);
 typedef RustAddDart = int Function(int, int);
@@ -14,67 +15,99 @@ void main() {
   .asFunction<RustAddDart>();
 
   print('1 + 2 = ${rustAdd(1, 2)}');
+  runApp(FestivalScheduleApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
+class FestivalScheduleApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Festival Schedule'),
+        ),
+        body: FestivalSchedulePage(),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-  final String title;
-
+class FestivalSchedulePage extends StatelessWidget {
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  Widget build(BuildContext context) {
+    return ListView(
+      padding: EdgeInsets.all(8.0),
+      children: [
+        ScheduleSection(
+          time: "11:00 15.07.2024",
+          title: "Открытие фестиваля",
+          location: "Лекторий 1",
+          speaker: "Организатор мероприятия",
+          color: Colors.purple[200],
+        ),
+        ScheduleSection(
+          time: "11:30-12:30",
+          title: "Ярмарка сообществ РЖА",
+          location: "Общая зона 'Оpen space'",
+          speaker: "Сообщества РЖА",
+          color: Colors.purple[100],
+        ),
+        // Add more sections based on the image provided
+        // ...
+        ScheduleSection(
+          time: "15:30-16:00",
+          title: "Закрытие фестиваля",
+          location: "Лекторий 1",
+          speaker: "",
+          color: Colors.purple[200],
+        ),
+      ],
+    );
+  }
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+class ScheduleSection extends StatelessWidget {
+  final String time;
+  final String title;
+  final String location;
+  final String speaker;
+  final Color color;
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+  ScheduleSection({
+    required this.time,
+    required this.title,
+    required this.location,
+    required this.speaker,
+    required this.color,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
-      body: Center(
+    return Card(
+      color: color,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
         child: Column(
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
             Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+              time,
+              style: TextStyle(fontWeight: FontWeight.bold),
             ),
+            SizedBox(height: 4),
+            Text(
+              title,
+              style: TextStyle(fontSize: 16),
+            ),
+            SizedBox(height: 4),
+            Text('Место: $location'),
+            if (speaker.isNotEmpty) ...[
+              SizedBox(height: 4),
+              Text('Спикер: $speaker'),
+            ],
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), 
     );
   }
 }
