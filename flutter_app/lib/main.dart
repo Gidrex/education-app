@@ -23,8 +23,8 @@ class _FestivalHomePageState extends State<FestivalHomePage> {
 
   static List<Widget> _widgetOptions = <Widget>[
     FestivalSchedulePage(),
-    Text('Главная', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
-    Text('Обучение', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+    Center(child: Text('Главная', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold))),
+    Center(child: Text('Обучение', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold))),
   ];
 
   void _onItemTapped(int index) {
@@ -45,14 +45,17 @@ class _FestivalHomePageState extends State<FestivalHomePage> {
           BottomNavigationBarItem(
             icon: Icon(Icons.schedule),
             label: 'Расписание',
+            backgroundColor: Colors.purple,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Главная',
+            backgroundColor: Colors.purple,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.school),
             label: 'Обучение',
+            backgroundColor: Colors.purple,
           ),
         ],
         currentIndex: _selectedIndex,
@@ -74,7 +77,7 @@ class FestivalSchedulePage extends StatelessWidget {
           title: "Открытие фестиваля",
           location: "Лекторий 1",
           speaker: "Организатор мероприятия",
-          color: Colors.purple[200]!,
+          color: Colors.purple[100]!,
         ),
         ScheduleSection(
           time: "11:30-12:30",
@@ -83,54 +86,84 @@ class FestivalSchedulePage extends StatelessWidget {
           speaker: "Сообщества РЖА",
           color: Colors.purple[100]!,
         ),
-        ScheduleSection(
-          time: "12:30-13:00",
-          title: "Лекция: 'Что такое семья'",
-          location: "Лекторий 2",
-          speaker: "Клара Бернаскони",
-          color: Colors.purple[200]!,
+        Row(
+          children: [
+            Expanded(
+              child: ScheduleSection(
+                time: "12:30-13:00",
+                title: "Лекция: 'Что такое семья'",
+                location: "Лекторий 2",
+                speaker: "Клара Бернаскони",
+                color: Colors.purple[100]!,
+              ),
+            ),
+            SizedBox(width: 8.0),
+            Expanded(
+              child: ScheduleSection(
+                time: "12:30-13:00",
+                title: "Зона аниматоров РЖА",
+                location: "Общая зона 'Оpen space'",
+                speaker: "",
+                color: Colors.purple[100]!,
+              ),
+            ),
+          ],
         ),
-        ScheduleSection(
-          time: "12:30-13:00",
-          title: "Зона аниматоров РЖА",
-          location: "Общая зона 'Оpen space'",
-          speaker: "",
-          color: Colors.purple[100]!,
+        SizedBox(height: 8.0),
+        Row(
+          children: [
+            Expanded(
+              child: ScheduleSection(
+                time: "13:00-14:00",
+                title: "Лекция: 'Что такое реклама и PR'",
+                location: "Лекторий 1",
+                speaker: "Михаил Иванов",
+                color: Colors.purple[100]!,
+              ),
+            ),
+            SizedBox(width: 8.0),
+            Expanded(
+              child: ScheduleSection(
+                time: "13:00-14:00",
+                title: "Лекция",
+                location: "Секция 3",
+                speaker: "",
+                color: Colors.purple[100]!,
+              ),
+            ),
+          ],
         ),
-        ScheduleSection(
-          time: "13:00-14:00",
-          title: "Лекция: 'Что такое реклама и PR'",
-          location: "Лекторий 1",
-          speaker: "Михаил Иванов",
-          color: Colors.purple[200]!,
+        SizedBox(height: 8.0),
+        Row(
+          children: [
+            Expanded(
+              child: ScheduleSection(
+                time: "13:00-13:30",
+                title: "Лекция: 'Что такое реклама и PR'",
+                location: "Лекторий 2",
+                speaker: "",
+                color: Colors.purple[100]!,
+              ),
+            ),
+            SizedBox(width: 8.0),
+            Expanded(
+              child: ScheduleSection(
+                time: "13:00-13:30",
+                title: "Лекция",
+                location: "Секция 4",
+                speaker: "",
+                color: Colors.purple[100]!,
+              ),
+            ),
+          ],
         ),
-        ScheduleSection(
-          time: "13:00-14:00",
-          title: "Лекция",
-          location: "Секция 3",
-          speaker: "",
-          color: Colors.purple[100]!,
-        ),
-        ScheduleSection(
-          time: "13:00-13:30",
-          title: "Лекция: 'Что такое реклама и PR'",
-          location: "Лекторий 2",
-          speaker: "",
-          color: Colors.purple[200]!,
-        ),
-        ScheduleSection(
-          time: "13:00-13:30",
-          title: "Лекция",
-          location: "Секция 4",
-          speaker: "",
-          color: Colors.purple[100]!,
-        ),
+        SizedBox(height: 8.0),
         ScheduleSection(
           time: "13:30-14:00",
           title: "Общий фуршет",
           location: "Кухня",
           speaker: "",
-          color: Colors.purple[200]!,
+          color: Colors.purple[100]!,
         ),
         ScheduleSection(
           time: "14:00-14:30",
@@ -144,7 +177,7 @@ class FestivalSchedulePage extends StatelessWidget {
           title: "Пение на жестовом языке",
           location: "Лекторий 1",
           speaker: "",
-          color: Colors.purple[200]!,
+          color: Colors.purple[100]!,
         ),
         ScheduleSection(
           time: "15:00-15:30",
@@ -158,7 +191,7 @@ class FestivalSchedulePage extends StatelessWidget {
           title: "Закрытие фестиваля",
           location: "Лекторий 1",
           speaker: "",
-          color: Colors.purple[200]!,
+          color: Colors.purple[300]!,
         ),
       ],
     );
@@ -182,28 +215,52 @@ class ScheduleSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ExpansionTile(
-      leading: Icon(Icons.arrow_downward),
-      title: Text(
-        time,
-        style: TextStyle(fontWeight: FontWeight.bold),
-      ),
-      subtitle: Text(title),
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 8.0),
+      child: Container(
+        decoration: BoxDecoration(
+          color: color,
+          borderRadius: BorderRadius.circular(8.0),
+        ),
+        child: ExpansionTile(
+          title: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Место: $location'),
-              if (speaker.isNotEmpty) ...[
-                SizedBox(height: 4),
-                Text('Спикер: $speaker'),
-              ],
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                  borderRadius: BorderRadius.circular(16.0),
+                ),
+                child: Text(
+                  time,
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              SizedBox(height: 8.0),
+              Text(
+                title,
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
             ],
           ),
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Место: $location'),
+                  if (speaker.isNotEmpty) ...[
+                    SizedBox(height: 4),
+                    Text('Спикер: $speaker'),
+                  ],
+                ],
+              ),
+            ),
+          ],
         ),
-      ],
+      ),
     );
   }
 }
