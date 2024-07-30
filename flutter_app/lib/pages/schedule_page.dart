@@ -162,7 +162,7 @@ class _ScheduleItemState extends State<ScheduleItem> {
                   ),
                   SizedBox(height: 8.0),
                   Container(
-                    height: 40.0, // Установка высоты для двух строк
+                    height: 60.0, // mb fix?
                     child: Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
@@ -181,8 +181,7 @@ class _ScheduleItemState extends State<ScheduleItem> {
               ),
             ),
             if (_isExpanded)
-              Container(
-                color: Color(0xFFdddadf),
+              Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                 child: Text(
                   widget.details,
