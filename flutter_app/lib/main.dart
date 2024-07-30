@@ -24,7 +24,7 @@ class _FestivalHomePageState extends State<FestivalHomePage> {
   int _selectedIndex = 0;
 
   static List<Widget> _widgetOptions = <Widget>[
-    FestivalSchedulePage(),
+    SchedulePage(),
     MainPage(),
     Center(child: Text('Обучение', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold))),
   ];
