@@ -8,17 +8,17 @@ class MainPage extends StatelessWidget {
         padding: EdgeInsets.all(16.0),
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/background.png'), // Обновите путь к фоновому изображению, если нужно
+            image: AssetImage('assets/background.png'), 
             fit: BoxFit.cover,
           ),
         ),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
               padding: EdgeInsets.all(16.0),
+              margin: EdgeInsets.only(top: 32.0, bottom: 16.0),
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: Color(0xFFeadaf2),
                 borderRadius: BorderRadius.circular(16.0),
                 border: Border.all(
                   color: Colors.black,
@@ -33,22 +33,25 @@ class MainPage extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 16.0),
+            Spacer(), 
             Container(
-              width: double.infinity, // Растягивание блока на всю ширину
+              width: double.infinity,
               decoration: BoxDecoration(
-                color: Colors.purple[100], // Цвет фона блока с описанием
+                color: Colors.purple[100],
                 borderRadius: BorderRadius.circular(16.0),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    width: double.infinity, // Растягивание блока на всю ширину
+                    width: double.infinity,
                     padding: EdgeInsets.symmetric(vertical: 8.0),
                     decoration: BoxDecoration(
-                      color: Color(0xFF82a1e4), // Цвет фона #82a1e4
-                      borderRadius: BorderRadius.circular(16.0),
+                      color: Color(0xFF82a1e4),
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(16.0),
+                        topRight: Radius.circular(16.0),
+                      ),
                     ),
                     child: Center(
                       child: Text(
@@ -66,7 +69,7 @@ class MainPage extends StatelessWidget {
                       'Целью проекта является создание инклюзивных условий посредством реализации проекта «Фестиваль "Услышь меня, я рядом"» в период с 15 марта по 15 сентября 2024 года для 200 слепоглухих, глухих людей и их родственных-лиц, ориентируясь на популяризацию мира глухих.',
                       style: TextStyle(
                         fontSize: 16.0,
-                        color: Colors.black, // Цвет текста
+                        color: Colors.black,
                       ),
                       textAlign: TextAlign.left,
                     ),
@@ -74,6 +77,7 @@ class MainPage extends StatelessWidget {
                 ],
               ),
             ),
+            Spacer(), 
           ],
         ),
       ),
