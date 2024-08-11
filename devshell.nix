@@ -34,5 +34,6 @@ devshell.mkShell {
     android-sdk
     gradle
     jdk
+    flutter
   ] ++ conditionalPackages;
 }
