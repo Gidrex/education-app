@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'pages/home_page.dart';
-import 'pages/schedule_page.dart';
+import 'pages/home.dart';
+import 'pages/schedule.dart';
 
 void main() {
   runApp(FestivalScheduleApp());
