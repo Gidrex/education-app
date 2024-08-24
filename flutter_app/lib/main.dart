@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'pages/home.dart';
 import 'pages/schedule.dart';
+import 'pages/video.dart';
 
 void main() {
   runApp(FestivalScheduleApp());
@@ -10,7 +11,7 @@ class FestivalScheduleApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: FestivalHomePage(),
+      home: MainPage(),
     );
   }
 }

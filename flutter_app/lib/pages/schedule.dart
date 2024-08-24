@@ -162,7 +162,9 @@ class _ScheduleItemState extends State<ScheduleItem> {
                   ),
                   SizedBox(height: 8.0),
                   Container(
-                    height: 60.0, // mb fix?
+                    constraints: BoxConstraints(
+                      minHeight: 60.0, // Убедитесь, что высота заголовка фиксирована
+                    ),
                     child: Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
