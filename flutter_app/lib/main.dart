@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'pages/home_page.dart';
 import 'pages/schedule_page.dart';
-import 'package:video_player/video_player.dart';
-
+import 'pag:webview_flutter/webview_flutter.dart';
 
 void main() {
   runApp(FestivalScheduleApp());
@@ -24,7 +23,7 @@ class VideoApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Video Demo',
+      title: 'WebView Video Demo',
       home: VideoPlayerScreen(),
     );
   }
@@ -36,54 +35,41 @@ class VideoPlayerScreen extends StatefulWidget {
 }
 
 class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
-  late VideoPlayerController _controller;
-
-  @override
-  void initState() {
-    super.initState();
-    // Здесь указываешь публичную ссылку на видео с MEGA
-    _controller = VideoPlayerController.network(
-        'https://mega.nz/folder/SI8WRCCR#4HAt8FOQU7xpep5TxvLDxw') 
-      ..initialize().then((_) {
-        setState(() {});
-      });
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
-    _controller.dispose();
-  }
+  late WebViewController _controller;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Video Demo'),
+        title: Text('MEGA Video Player'),
       ),
-      body: Center(
-        child: _controller.value.isInitialized
-            ? AspectRatio(
-                aspectRatio: _controller.value.aspectRatio,
-                child: VideoPlayer(_controller),
-              )
-            : CircularProgressIndicator(),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(() {
-            _controller.value.isPlaying
-                ? _controller.pause()
-                : _controller.play();
-          });
+      body: WebView(
+        initialUrl: Uri.dataFromString(
+          '''
+          <html>
+            <body style="margin: 0; padding: 0; overflow: hidden;">
+              <iframe 
+                width="100%" 
+                height="100%" 
+                frameborder="0" 
+                src="https://mega.nz/embed/zYsDRAyb#HfyhfCNQbTZRrhMNZ6pzhzgJnCQ7YtunGj3978UECRQ" 
+                allowfullscreen>
+              </iframe>
+            </body>
+          </html>
+          ''',
+          mimeType: 'text/html',
+          encoding: Encoding.getByName('utf-8')
+        ).toString(),
+        javascriptMode: JavascriptMode.unrestricted,
+        onWebViewCreated: (WebViewController webViewController) {
+          _controller = webViewController;
         },
-        child: Icon(
-          _controller.value.isPlaying ? Icons.pause : Icons.play_arrow,
-        ),
       ),
     );
   }
 }
+
 
 class FestivalHomePage extends StatefulWidget {
   @override
