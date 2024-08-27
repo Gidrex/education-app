@@ -1,0 +1,93 @@
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.buildDir = "../build"
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+subprojects {
+    project.evaluationDependsOn(":app")
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file("local.properties")
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader("UTF-8") { reader ->
+        localProperties.load(reader)
+    }
+}
+
+def flutterRoot = localProperties.getProperty("flutter.sdk")
+def flutterVersionCode = localProperties.getProperty("flutter.versionCode")
+if (flutterVersionCode == null) {
+    flutterVersionCode = "1"
+}
+def flutterVersionName = localProperties.getProperty("flutter.versionName")
+if (flutterVersionName == null) {
+    flutterVersionName = "1.0"
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'dev.flutter.flutter-gradle-plugin'
+
+android {
+    compileSdkVersion 33
+
+    defaultConfig {
+        applicationId "com.example.flutter_app"  // Замените на ваш applicationId
+        minSdkVersion 21  // Минимальная версия Android SDK
+        targetSdkVersion 33  // Целевая версия Android SDK
+        // Используем flutterVersionCode
+          // Используем flutterVersionName
+    }
+
+     signingConfigs {
+        release {
+            // Укажите путь к вашему keystore и данные для подписи
+           keyAlias 'Festival'
+           keyPassword '1N2h3Y@'
+           storeFile file('/home/reiden/my-release-key.jks')
+          storePassword '1N2h3Y@'
+       }
+  }
+
+    buildTypes {
+        release {
+             signingConfig signingConfigs.release
+            minifyEnabled true  // Включить ProGuard для уменьшения размера APK
+            shrinkResources true  // Удалить неиспользуемые ресурсы
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            signingConfig signingConfigs.debug
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+flutter {
+    source '../..'
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+
