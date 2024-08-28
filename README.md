@@ -1,15 +1,16 @@
-# Preview
-A simple mobile app for event [Фестиваль "Услышь меня, я рядом!"](https://vk.com/club225260005).
+# flutter_app
 
-# Tech task
-- главная страница (static)
-- расписание (static)
-- обучение 11 videos (request download access)
+A new Flutter project.
 
-[figma frame](https://www.figma.com/board/JcLOJXpSjLUnVv3nWnkO16/Untitled?node-id=4-192&t=YPQdlpRcjGuBjlMZ-0)
+## Getting Started
 
-# How to run
-```sh
-git clone git@github.com:Gidrex/education-app.git
-cd education-app
-nix develop
+This project is a starting point for a Flutter application.
+
+A few resources to get you started if this is your first Flutter project:
+
+- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+
+For help getting started with Flutter development, view the
+[online documentation](https://docs.flutter.dev/), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.
