@@ -1,0 +1,1 @@
+ /home/gidrex/Work/education-app/.dart_tool/flutter_build/bdbdff97a66f55c7d2e0aa1242c1cf00/native_assets.yaml: 
