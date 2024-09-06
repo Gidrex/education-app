@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'pages/home.dart';
 import 'pages/schedule.dart';
+import 'pages/video.list.screen.dart';
+
 
 void main() {
   runApp(FestivalScheduleApp());
@@ -26,7 +28,7 @@ class _FestivalHomePageState extends State<FestivalHomePage> {
   static List<Widget> _widgetOptions = <Widget>[
     SchedulePage(),
     MainPage(),
-    Center(child: Text('Обучение', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold))),
+    VideoListScreen(),
   ];
 
   void _onItemTapped(int index) {
