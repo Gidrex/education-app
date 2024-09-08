@@ -27,3 +27,7 @@ flutter:
     - lib/assets/poster2.jpg
     - lib/assets/poster3.jpg
     - lib/assets/poster4.jpg
+    - lib/assets/poster5.jpg
+    - lib/assets/poster6.jpg
+    - lib/assets/poster7.jpg
+    - lib/assets/background.png

@@ -9,16 +9,15 @@ class VideoScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Настройка контроллера WebView для загрузки видео с Mega
     final WebViewController controller = WebViewController()
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
-      ..loadRequest(Uri.parse(videoUrl));  // Загружаем URL страницы Mega
+      ..loadRequest(Uri.parse(videoUrl));
 
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
       ),
-      body: WebViewWidget(controller: controller), // Используем WebView для отображения плеера Mega
+      body: WebViewWidget(controller: controller),
     );
   }
 }
