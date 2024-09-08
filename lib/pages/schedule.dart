@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class SchedulePage extends StatelessWidget {
@@ -110,6 +109,7 @@ class _ScheduleItemState extends State<ScheduleItem> {
           borderRadius: BorderRadius.circular(16.0),
         ),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ListTile(
               title: Column(
@@ -130,44 +130,37 @@ class _ScheduleItemState extends State<ScheduleItem> {
                     ),
                   ),
                   SizedBox(height: 8.0),
-                  Container(
-                    height: 60.0,
-                    child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        widget.title,
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.bold,
-                        ),
+                  // Wrap the title text with Expanded or Flexible
+                  Flexible(
+                    child: Text(
+                      widget.title,
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.bold,
                       ),
+                      overflow: TextOverflow.visible, // Ensure the text is fully visible
                     ),
                   ),
                 ],
               ),
               trailing: shouldExpand
-                  ? Icon(_isExpanded ? Icons.expand_less : Icons.expand_more)
-                  : null,
+              ? Icon(_isExpanded ? Icons.expand_less : Icons.expand_more)
+              : null,
             ),
             if (_isExpanded && shouldExpand)
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-                  child: Text(
-                    widget.details,
-                    style: TextStyle(
-                      fontSize: 16.0,
-                      color: Colors.black,
-                    ),
-                    textAlign: TextAlign.left,
-                  ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+              child: Text(
+                widget.details,
+                style: TextStyle(
+                  fontSize: 16.0,
+                  color: Colors.black,
                 ),
               ),
+            ),
           ],
         ),
       ),
     );
   }
 }
-
