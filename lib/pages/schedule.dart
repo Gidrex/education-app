@@ -145,13 +145,17 @@ class _ScheduleItemState extends State<ScheduleItem> {
               : null,
             ),
             if (_isExpanded && shouldExpand)
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-              child: Text(
-                widget.details,
-                style: TextStyle(
-                  fontSize: 16.0,
-                  color: Colors.black,
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                child: Text(
+                  widget.details,
+                  style: TextStyle(
+                    fontSize: 16.0,
+                    color: Colors.black,
+                  ),
+                  textAlign: TextAlign.left,
                 ),
               ),
             ),

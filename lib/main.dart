@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 import 'pages/home.dart';
 import 'pages/schedule.dart';
 import 'pages/video_list_screen.dart';
-
 
 void main() {
   runApp(FestivalScheduleApp());
@@ -12,74 +12,63 @@ class FestivalScheduleApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: FestivalHomePage(),
+      home: BottomNavigationBarApp(),
     );
   }
 }
 
-class FestivalHomePage extends StatefulWidget {
+class BottomNavigationBarApp extends StatefulWidget {
+  const BottomNavigationBarApp({Key? key}) : super(key: key);
+
   @override
-  _FestivalHomePageState createState() => _FestivalHomePageState();
+  State<BottomNavigationBarApp> createState() => _BottomNavigationBarAppState();
 }
 
-class _FestivalHomePageState extends State<FestivalHomePage> {
+class _BottomNavigationBarAppState extends State<BottomNavigationBarApp> {
   int _selectedIndex = 0;
 
-  static List<Widget> _widgetOptions = <Widget>[
+  // Виджеты для трёх категорий
+  static final _widgetOptions = <Widget>[
     SchedulePage(),
     MainPage(),
     VideoListScreen(),
   ];
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.purple[100], // фиолетовый фон для Scaffold
-      // appBar: AppBar(
-      //   title: Text('Festival Schedule'),
-      //   backgroundColor: Colors.purple,
-      // ),
-      body: Container(
-        color: Colors.purple[100], // Цвет фона для содержимого
-        child: _widgetOptions.elementAt(_selectedIndex),
-      ),
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-          border: Border(
-            top: BorderSide(color: Colors.black, width: 2.0), // Верхняя черная обводка
-          ),
-        ),
-        child: BottomNavigationBar(
-          backgroundColor: Colors.purple[200], // Фон нижней панели навигации
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(Icons.schedule),
-              label: 'Расписание',
-              backgroundColor: Colors.purple,
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Главная',
-              backgroundColor: Colors.purple,
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.school),
-              label: 'Обучение',
-              backgroundColor: Colors.purple,
-            ),
-          ],
-          currentIndex: _selectedIndex,
-          selectedItemColor: Colors.red[700], // Цвет выбранного элемента
-          unselectedItemColor: Colors.black, // Цвет невыбранных элементов
-          onTap: _onItemTapped,
-        ),
+      appBar: AppBar(title: const Text('Услышь меня, я рядом!')),
+      body: _widgetOptions[_selectedIndex],
+      bottomNavigationBar: SalomonBottomBar(
+        currentIndex: _selectedIndex,
+        selectedItemColor: const Color(0xff6200ee),
+        unselectedItemColor: const Color(0xff757575),
+        onTap: (index) {
+          setState(() {
+            _selectedIndex = index;
+          });
+        },
+        items: _navBarItems,
+        margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       ),
     );
   }
 }
+
+final _navBarItems = [
+  SalomonBottomBarItem(
+    icon: const Icon(Icons.schedule, size: 38.0),
+    title: const Text("Расписание"),
+    selectedColor: Colors.purple,
+  ),
+  SalomonBottomBarItem(
+    icon: const Icon(Icons.home, size: 38.0),
+    title: const Text("Главная"),
+    selectedColor: Colors.blue,
+  ),
+  SalomonBottomBarItem(
+    icon: const Icon(Icons.school, size: 38.0),
+    title: const Text("Обучение"),
+    selectedColor: Colors.teal,
+  ),
+];
