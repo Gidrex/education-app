@@ -3,62 +3,62 @@ import 'video.dart';
 
 class VideoListScreen extends StatelessWidget {
   final List<Map<String, String>> videos = [
-    {
-      'title': 'Встреча 1',
-      'theme': 'Знакомство, дактиль',
-      'date': '10.04.2024',
-      'time': '12:00-13:00',
-      'videoUrl': 'https://mega.nz/embed/zYsDRAyb#HfyhfCNQbTZRrhMNZ6pzhzgJnCQ7YtunGj3978UECRQ',
-      'posterUrl': 'lib/assets/poster1.jpg',
-    },
-    {
-      'title': 'Встреча 2',
-      'theme': 'Числа',
-      'date': '25.04.2024',
-      'time': '12:00-13:00',
-      'videoUrl': 'https://mega.nz/embed/aIFnTAYb#SNaTWL4W1Odw8Q_b7JN5dm9LJ4TaHEfsMo22X4vq3_8',
-      'posterUrl': 'lib/assets/poster2.jpg',
-    },
-    {
-      'title': 'Встреча 3',
-      'theme': 'Календарь',
-      'date': '10.05.2024',
-      'time': '12:00-13:00',
-      'videoUrl': 'https://mega.nz/embed/2ZEH3ILb#EXOL7ZU4BUUZUg7z6MzLEZzPwVy4WpTcIi8nrPXhfgo',
-      'posterUrl': 'lib/assets/poster3.jpg',
-    },
-    {
-      'title': 'Встреча 4',
-      'theme': 'Время года',
-      'date': '15.05.2024',
-      'time': '12:00-13:00',
-      'videoUrl': 'https://mega.nz/embed/rAMhXLgL#W4CXIz0dg8C4tWnAxfGa7HdopTWmkCHxnEEyJl_BGUQ',
-      'posterUrl': 'lib/assets/poster4.jpg',
-    },
-    {
-      'title': 'Встреча 5',
-      'theme': 'Образование прошлого и будущего времени.',
-      'date': '15.05.2024',
-      'time': '12:00-13:00',
-      'videoUrl': 'https://mega.nz/embed/SJMXCL6S#3bxQSE1A41fBiwcJOnd941OX9rxiyI5-2QXYmO84RSk',
-      'posterUrl': 'lib/assets/poster5.jpg',
-    },
-    {
-      'title': 'Встреча 6',
-      'theme': 'Семья',
-      'date': '15.05.2024',
-      'time': '12:00-13:00',
-      'videoUrl': 'https://mega.nz/embed/WFdm1DhD#FRjWQbuegoVBTdxw_oWLgE9HdTzElPeqhG1LCFZv5pg',
-      'posterUrl': 'lib/assets/poster6.jpg',
-    },
-    {
-      'title': 'Встреча 7',
-      'theme': 'Структура жеста',
-      'date': '15.05.2024',
-      'time': '12:00-13:00',
-      'videoUrl': 'https://mega.nz/embed/iJVCURJC#Bc46lRTJ5evOCPJ0ilTgsCR673tFw1CbRbJLuwrVYkc',
-      'posterUrl': 'lib/assets/poster7.jpg',
-    }
+  {
+    'title': 'Встреча 1',
+    'theme': 'Знакомство, дактиль',
+    'date': '10.04.2024',
+    'time': '12:00-13:00',
+    'videoUrl': 'https://mega.nz/embed/zYsDRAyb#HfyhfCNQbTZRrhMNZ6pzhzgJnCQ7YtunGj3978UECRQ',
+    'posterUrl': 'lib/assets/poster1.jpg',
+  },
+  {
+    'title': 'Встреча 2',
+    'theme': 'Числа',
+    'date': '25.04.2024',
+    'time': '12:00-13:00',
+    'videoUrl': 'https://mega.nz/embed/aIFnTAYb#SNaTWL4W1Odw8Q_b7JN5dm9LJ4TaHEfsMo22X4vq3_8',
+    'posterUrl': 'lib/assets/poster2.jpg',
+  },
+  {
+    'title': 'Встреча 3',
+    'theme': 'Календарь',
+    'date': '10.05.2024',
+    'time': '12:00-13:00',
+    'videoUrl': 'https://mega.nz/embed/2ZEH3ILb#EXOL7ZU4BUUZUg7z6MzLEZzPwVy4WpTcIi8nrPXhfgo',
+    'posterUrl': 'lib/assets/poster3.jpg',
+  },
+  {
+    'title': 'Встреча 4',
+    'theme': 'Время года',
+    'date': '15.05.2024',
+    'time': '12:00-13:00',
+    'videoUrl': 'https://mega.nz/embed/rAMhXLgL#W4CXIz0dg8C4tWnAxfGa7HdopTWmkCHxnEEyJl_BGUQ',
+    'posterUrl': 'lib/assets/poster4.jpg',
+  },
+  {
+    'title': 'Встреча 5',
+    'theme': 'Образование прошлого и будущего времени.',
+    'date': '15.05.2024',
+    'time': '12:00-13:00',
+    'videoUrl': 'https://mega.nz/embed/SJMXCL6S#3bxQSE1A41fBiwcJOnd941OX9rxiyI5-2QXYmO84RSk',
+    'posterUrl': 'lib/assets/poster5.jpg',
+  },
+  {
+    'title': 'Встреча 6',
+    'theme': 'Семья',
+    'date': '15.05.2024',
+    'time': '12:00-13:00',
+    'videoUrl': 'https://mega.nz/embed/WFdm1DhD#FRjWQbuegoVBTdxw_oWLgE9HdTzElPeqhG1LCFZv5pg',
+    'posterUrl': 'lib/assets/poster6.jpg',
+  },
+  {
+    'title': 'Встреча 7',
+    'theme': 'Структура жеста',
+    'date': '15.05.2024',
+    'time': '12:00-13:00',
+    'videoUrl': 'https://mega.nz/embed/iJVCURJC#Bc46lRTJ5evOCPJ0ilTgsCR673tFw1CbRbJLuwrVYkc',
+    'posterUrl': 'lib/assets/poster7.jpg',
+  }
   ];
 
   @override
@@ -76,7 +76,11 @@ class VideoListScreen extends StatelessWidget {
                     padding: EdgeInsets.all(16),
                     margin: EdgeInsets.symmetric(vertical: 16),
                     decoration: BoxDecoration(
-                      color: Color(0xFFCE93D8),
+                      gradient: LinearGradient(
+                        colors: [Color(0xFFCE93D8), Color(0xFFD1C4E9)],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: Text(
@@ -102,7 +106,11 @@ class VideoListScreen extends StatelessWidget {
                       child: Container(
                         padding: EdgeInsets.symmetric(vertical: 4, horizontal: 12),
                         decoration: BoxDecoration(
-                          color: Color(0xFFCE93D8),
+                          gradient: LinearGradient(
+                            colors: [Color(0xFFCE93D8), Color(0xFFD1C4E9)],
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                          ),
                           borderRadius: BorderRadius.circular(12),
                         ),
                         child: Text(
@@ -119,7 +127,11 @@ class VideoListScreen extends StatelessWidget {
                     Container(
                       padding: EdgeInsets.all(12),
                       decoration: BoxDecoration(
-                        color: Color(0xFFCE93D8),
+                        gradient: LinearGradient(
+                          colors: [Color(0xFFCE93D8), Color(0xFFD1C4E9)],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                        ),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Column(
@@ -128,7 +140,11 @@ class VideoListScreen extends StatelessWidget {
                           Container(
                             padding: EdgeInsets.symmetric(vertical: 4, horizontal: 12),
                             decoration: BoxDecoration(
-                              color: Color(0xFFAB47BC),
+                              gradient: LinearGradient(
+                                colors: [Color(0xFFAB47BC), Color(0xFFBA68C8)],
+                                begin: Alignment.topLeft,
+                                end: Alignment.bottomRight,
+                              ),
                               borderRadius: BorderRadius.circular(12),
                             ),
                             child: Text(
@@ -218,7 +234,7 @@ class VideoListScreen extends StatelessWidget {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Text(
-                            'Данные курсы предназначены для волонтёров, которые хотят выучить русский тестовый язык и помогать глухим/слабослышащим людям. Обучающие курсы и фестиваль станут отправной точкой для волонтёров РЖЯ.',
+                            'Данные курсы предназначены для волонтёров, которые хотят выучить русский жестовый язык и помогать глухим/слабослышащим людям. Обучающие курсы и фестиваль станут отправной точкой для волонтёров РЖЯ.',
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               fontSize: 16,
