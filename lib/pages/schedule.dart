@@ -88,11 +88,15 @@ class _ScheduleItemState extends State<ScheduleItem> {
 
   @override
   Widget build(BuildContext context) {
+    bool shouldExpand = widget.title != "Закрытие фестиваля, раздача призов.";
+
     return GestureDetector(
       onTap: () {
-        setState(() {
-          _isExpanded = !_isExpanded;
-        });
+        if (shouldExpand) {
+          setState(() {
+            _isExpanded = !_isExpanded;
+          });
+        }
       },
       child: Container(
         margin: EdgeInsets.only(bottom: 16.0),
@@ -136,21 +140,21 @@ class _ScheduleItemState extends State<ScheduleItem> {
                   ),
                 ],
               ),
-              trailing: Icon(
-                _isExpanded ? Icons.expand_less : Icons.expand_more,
-              ),
+              trailing: shouldExpand
+              ? Icon(_isExpanded ? Icons.expand_less : Icons.expand_more)
+              : null,
             ),
-            if (_isExpanded)
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-                child: Text(
-                  widget.details,
-                  style: TextStyle(
-                    fontSize: 16.0,
-                    color: Colors.black,
-                  ),
+            if (_isExpanded && shouldExpand)
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+              child: Text(
+                widget.details,
+                style: TextStyle(
+                  fontSize: 16.0,
+                  color: Colors.black,
                 ),
               ),
+            ),
           ],
         ),
       ),
