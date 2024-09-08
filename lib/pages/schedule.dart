@@ -8,99 +8,59 @@ class SchedulePage extends StatelessWidget {
         padding: EdgeInsets.all(16.0),
         children: [
           ScheduleItem(
-            time: "11:00 15.07.2024",
-            title: "Открытие фестиваля",
+            time: "11:00-11:30    15.07.2024",
+            title: 'Открытие фестиваля "Услышь меня, я рядом!"',
             details: "Место: Лекторий 1\nСпикер: Организатор мероприятия",
           ),
           ScheduleItem(
-            time: "11:30-12:30",
-            title: "Ярмарка сообществ РЖА",
+            time: "11:30-13:00",
+            title: "Ярмарка сообществ РЖЯ! Инклюзивные игры, викторины, конкурсы, рисование.",
             details: "Место: Общая зона 'Open space'\nСпикер: Сообщества РЖА",
           ),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(
-                child: ScheduleItem(
-                  time: "12:30-13:00",
-                  title: "Лекция: 'Что такое семья'",
-                  details: "Место: Лекторий 2\nСпикер: Лектор",
-                ),
-              ),
-              SizedBox(width: 8),
-              Expanded(
-                child: ScheduleItem(
-                  time: "12:30-13:00",
-                  title: "Зона аниматоров РЖА",
-                  details: "Место: Секция 1\nСпикер: Аниматор",
-                ),
-              ),
-            ],
-          ),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(
-                child: ScheduleItem(
-                  time: "13:00-14:00",
-                  title: "Лекция: 'Что такое реклама и PR'",
-                  details: "Место: Лекторий 1\nСпикер: Специалист по PR",
-                ),
-              ),
-              SizedBox(width: 8),
-              Expanded(
-                child: ScheduleItem(
-                  time: "13:00-14:00",
-                  title: "Лекция",
-                  details: "Место: Секция 2\nСпикер: Лектор",
-                ),
-              ),
-            ],
-          ),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(
-                child: ScheduleItem(
-                  time: "13:00-13:30",
-                  title: "Лекция: 'Что такое реклама и PR'",
-                  details: "Место: Лекторий 2\nСпикер: Специалист по PR",
-                ),
-              ),
-              SizedBox(width: 8),
-              Expanded(
-                child: ScheduleItem(
-                  time: "13:00-13:30",
-                  title: "Лекция",
-                  details: "Место: Секция 3\nСпикер: Лектор",
-                ),
-              ),
-            ],
-          ),
           ScheduleItem(
-            time: "13:30-14:00",
-            title: "Общий фуршет",
-            details: "Место: Кухня\nСпикер: Организатор",
+            time: "12:00-13:00",
+            title: "Игры для глухих.",
+            details: 'Проект партнёр "Мир да Лад".',
           ),
-          ScheduleItem(
-            time: "14:00-14:30",
-            title: "Лекция: 'Что такое семья'",
-            details: "Место: Лекторий 1\nСпикер: Лектор",
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                child: ScheduleItem(
+                  time: "13:00-14:30",
+                  title: "Лекторий (1)",
+                  details: "– Вера Шамаева- зам председателя СПб РО ОООИ ВОГ \n– Елена Плащевская – основатель проекта «Тацида|РЖЯ». \n– Владимир Полянский – основатель проекта «Я вижу, что ты говоришь»",
+                ),
+              ),
+              SizedBox(width: 8),
+              Expanded(
+                child: ScheduleItem(
+                  time: "13:00-14:30",
+                  title: "Лекторий (2)",
+                  details: "– Алевтина Белая – преподаватель проекта «Русский Жестовый Язык Diale»\n– Алексей Сухов – Директор подростково-молодёжного клуба «Патриот».",
+                ),
+              ),
+            ],
           ),
           ScheduleItem(
             time: "14:30-15:00",
-            title: "Пение на жестовом языке",
-            details: "Место: Лекторий 1\nСпикер: Певец",
+            title: "Фуршет!",
+            details: "Место: Кухня.",
           ),
           ScheduleItem(
-            time: "15:00-15:30",
-            title: "Театральные постановки на РЖА",
-            details: "Место: Лекторий 1\nСпикер: Актёр",
+            time: "15:00-16:00",
+            title: "Жестовое пение.",
+            details: "(Детский образовательный коллектив «Слышим сердцем»), («Петербургская ЛекSема» творческий коллектив), (Клуб жестовой песни HandMusic).",
           ),
           ScheduleItem(
-            time: "15:30-16:00",
-            title: "Закрытие фестиваля",
-            details: "Место: Лекторий 1\nСпикер: Организатор",
+            time: "16:00-16:30",
+            title: "Театральные постановки на жестовом языке.",
+            details: "У театр.",
+          ),
+          ScheduleItem(
+            time: "16:30",
+            title: "Закрытие фестиваля, раздача призов.",
+            details: "а что тут добавить?",
           ),
         ],
       ),

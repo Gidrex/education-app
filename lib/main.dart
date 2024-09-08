@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'pages/home.dart';
 import 'pages/schedule.dart';
-import 'pages/video.list.screen.dart';
+import 'pages/video_list_screen.dart';
 
 
 void main() {

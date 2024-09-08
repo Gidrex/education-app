@@ -1,6 +1,5 @@
-// video_list_screen.dart
 import 'package:flutter/material.dart';
-import 'video.dart'; // Импортируем VideoScreen с использованием video_player
+import 'video.dart';
 
 class VideoListScreen extends StatelessWidget {
   final List<Map<String, String>> videos = [
