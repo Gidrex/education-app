@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 
 class SchedulePage extends StatelessWidget {
@@ -8,7 +9,7 @@ class SchedulePage extends StatelessWidget {
         padding: EdgeInsets.all(16.0),
         children: [
           ScheduleItem(
-            time: "11:00-11:30    15.07.2024",
+            time: "11:00-11:30",
             title: 'Открытие фестиваля "Услышь меня, я рядом!"',
             details: "Место: Лекторий 1\nСпикер: Организатор мероприятия",
           ),
@@ -29,7 +30,7 @@ class SchedulePage extends StatelessWidget {
                 child: ScheduleItem(
                   time: "13:00-14:30",
                   title: "Лекторий (1)",
-                  details: "– Вера Шамаева- зам председателя СПб РО ОООИ ВОГ \n– Елена Плащевская – основатель проекта «Тацида|РЖЯ». \n– Владимир Полянский – основатель проекта «Я вижу, что ты говоришь»",
+                  details: "– Вера Шамаева: зам председателя СПб РО ОООИ ВОГ \n– Елена Плащевская: основатель проекта «Тацида|РЖЯ». \n– Владимир Полянский: основатель проекта «Я вижу, что ты говоришь»",
                 ),
               ),
               SizedBox(width: 8),
@@ -37,7 +38,7 @@ class SchedulePage extends StatelessWidget {
                 child: ScheduleItem(
                   time: "13:00-14:30",
                   title: "Лекторий (2)",
-                  details: "– Алевтина Белая – преподаватель проекта «Русский Жестовый Язык Diale»\n– Алексей Сухов – Директор подростково-молодёжного клуба «Патриот».",
+                  details: "– Алевтина Белая: преподаватель проекта «Русский Жестовый Язык Diale»\n– Алексей Сухов: Директор подростково-молодёжного клуба «Патриот».",
                 ),
               ),
             ],
@@ -101,7 +102,11 @@ class _ScheduleItemState extends State<ScheduleItem> {
       child: Container(
         margin: EdgeInsets.only(bottom: 16.0),
         decoration: BoxDecoration(
-          color: Colors.purple[100],
+          gradient: LinearGradient(
+            colors: [Colors.purple[100]!, Colors.purple[200]!],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
           borderRadius: BorderRadius.circular(16.0),
         ),
         child: Column(
@@ -126,7 +131,7 @@ class _ScheduleItemState extends State<ScheduleItem> {
                   ),
                   SizedBox(height: 8.0),
                   Container(
-                    height: 60.0, // mb fix?
+                    height: 60.0,
                     child: Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
@@ -141,27 +146,28 @@ class _ScheduleItemState extends State<ScheduleItem> {
                 ],
               ),
               trailing: shouldExpand
-              ? Icon(_isExpanded ? Icons.expand_less : Icons.expand_more)
-              : null,
+                  ? Icon(_isExpanded ? Icons.expand_less : Icons.expand_more)
+                  : null,
             ),
             if (_isExpanded && shouldExpand)
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-                child: Text(
-                  widget.details,
-                  style: TextStyle(
-                    fontSize: 16.0,
-                    color: Colors.black,
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                  child: Text(
+                    widget.details,
+                    style: TextStyle(
+                      fontSize: 16.0,
+                      color: Colors.black,
+                    ),
+                    textAlign: TextAlign.left,
                   ),
-                  textAlign: TextAlign.left,
                 ),
               ),
-            ),
           ],
         ),
       ),
     );
   }
 }
+

@@ -25,9 +25,8 @@ class BottomNavigationBarApp extends StatefulWidget {
 }
 
 class _BottomNavigationBarAppState extends State<BottomNavigationBarApp> {
-  int _selectedIndex = 0;
+  int _selectedIndex = 1;
 
-  // Виджеты для трёх категорий
   static final _widgetOptions = <Widget>[
     SchedulePage(),
     MainPage(),
@@ -37,7 +36,6 @@ class _BottomNavigationBarAppState extends State<BottomNavigationBarApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Услышь меня, я рядом!')),
       body: _widgetOptions[_selectedIndex],
       bottomNavigationBar: SalomonBottomBar(
         currentIndex: _selectedIndex,
