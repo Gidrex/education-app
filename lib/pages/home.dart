@@ -32,7 +32,7 @@ class MainPage extends StatelessWidget {
               child: Text(
                 'Услышь меня, я рядом!',
                 style: TextStyle(
-                  fontSize: 24.0,
+                  fontSize: 22.0,
                   fontWeight: FontWeight.bold,
                 ),
               ),

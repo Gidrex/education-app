@@ -15,7 +15,7 @@ class SchedulePage extends StatelessWidget {
           ScheduleItem(
             time: "11:30-13:00",
             title: "Ярмарка сообществ РЖЯ! Инклюзивные игры, викторины, конкурсы, рисование.",
-            details: "Место: Общая зона 'Open space'\nСпикер: Сообщества РЖА",
+            details: "Место: Общая зона 'Open space'\nСпикер: Сообщества РЖЯ",
           ),
           ScheduleItem(
             time: "12:00-13:00",
@@ -49,7 +49,7 @@ class SchedulePage extends StatelessWidget {
           ),
           ScheduleItem(
             time: "15:00-16:00",
-            title: "Жестовое пение.",
+            title: "Жестовая песня.",
             details: "(Детский образовательный коллектив «Слышим сердцем»), («Петербургская ЛекSема» творческий коллектив), (Клуб жестовой песни HandMusic).",
           ),
           ScheduleItem(
@@ -134,7 +134,7 @@ class _ScheduleItemState extends State<ScheduleItem> {
                     child: Text(
                       widget.title,
                       style: TextStyle(
-                        fontSize: 18.0,
+                        fontSize: 16.0,
                         fontWeight: FontWeight.bold,
                       ),
                       overflow: TextOverflow.visible, // Ensure the text is fully visible
