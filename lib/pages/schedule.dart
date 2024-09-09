@@ -130,7 +130,6 @@ class _ScheduleItemState extends State<ScheduleItem> {
                     ),
                   ),
                   SizedBox(height: 8.0),
-                  // Wrap the title text with Expanded or Flexible
                   Flexible(
                     child: Text(
                       widget.title,
