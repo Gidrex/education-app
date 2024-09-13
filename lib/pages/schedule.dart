@@ -30,6 +30,7 @@ class SchedulePage extends StatelessWidget {
                   time: "13:00-14:30",
                   title: "Лекторий (1)",
                   details: "– Вера Шамаева: зам председателя СПб РО ОООИ ВОГ \n– Елена Плащевская: основатель проекта «Тацида|РЖЯ». \n– Владимир Полянский: основатель проекта «Я вижу, что ты говоришь»",
+                  textStyle: TextStyle(fontSize: 16.0),
                 ),
               ),
               SizedBox(width: 8),
@@ -38,6 +39,7 @@ class SchedulePage extends StatelessWidget {
                   time: "13:00-14:30",
                   title: "Лекторий (2)",
                   details: "– Алевтина Белая: преподаватель проекта «Русский Жестовый Язык Diale»\n– Алексей Сухов: Директор подростково-молодёжного клуба «Патриот».",
+                  textStyle: TextStyle(fontSize: 16.0),
                 ),
               ),
             ],
@@ -72,11 +74,13 @@ class ScheduleItem extends StatefulWidget {
   final String time;
   final String title;
   final String details;
+  final TextStyle? textStyle;
 
   ScheduleItem({
     required this.time,
     required this.title,
     required this.details,
+    this.textStyle,
   });
 
   @override
@@ -133,30 +137,30 @@ class _ScheduleItemState extends State<ScheduleItem> {
                   Flexible(
                     child: Text(
                       widget.title,
-                      style: TextStyle(
-                        fontSize: 16.0,
+                      style: widget.textStyle ?? TextStyle(
+                        fontSize: 18.0,
                         fontWeight: FontWeight.bold,
                       ),
-                      overflow: TextOverflow.visible, // Ensure the text is fully visible
+                      overflow: TextOverflow.visible,
                     ),
                   ),
                 ],
               ),
               trailing: shouldExpand
-              ? Icon(_isExpanded ? Icons.expand_less : Icons.expand_more)
-              : null,
+                  ? Icon(_isExpanded ? Icons.expand_less : Icons.expand_more)
+                  : null,
             ),
             if (_isExpanded && shouldExpand)
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-              child: Text(
-                widget.details,
-                style: TextStyle(
-                  fontSize: 16.0,
-                  color: Colors.black,
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                child: Text(
+                  widget.details,
+                  style: widget.textStyle ?? TextStyle(
+                    fontSize: 16.0,
+                    color: Colors.black,
+                  ),
                 ),
               ),
-            ),
           ],
         ),
       ),
