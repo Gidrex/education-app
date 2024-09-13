@@ -30,7 +30,6 @@ class SchedulePage extends StatelessWidget {
                   time: "13:00-14:30",
                   title: "Лекторий (1)",
                   details: "– Вера Шамаева: зам председателя СПб РО ОООИ ВОГ \n– Елена Плащевская: основатель проекта «Тацида|РЖЯ». \n– Владимир Полянский: основатель проекта «Я вижу, что ты говоришь»",
-                  textStyle: TextStyle(fontSize: 16.0),
                 ),
               ),
               SizedBox(width: 8),
@@ -39,7 +38,6 @@ class SchedulePage extends StatelessWidget {
                   time: "13:00-14:30",
                   title: "Лекторий (2)",
                   details: "– Алевтина Белая: преподаватель проекта «Русский Жестовый Язык Diale»\n– Алексей Сухов: Директор подростково-молодёжного клуба «Патриот».",
-                  textStyle: TextStyle(fontSize: 16.0),
                 ),
               ),
             ],
@@ -137,9 +135,9 @@ class _ScheduleItemState extends State<ScheduleItem> {
                   Flexible(
                     child: Text(
                       widget.title,
-                      style: widget.textStyle ?? TextStyle(
+                      style: TextStyle(
                         fontSize: 18.0,
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.bold, // Жирный шрифт для всех title
                       ),
                       overflow: TextOverflow.visible,
                     ),
@@ -155,7 +153,7 @@ class _ScheduleItemState extends State<ScheduleItem> {
                 padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                 child: Text(
                   widget.details,
-                  style: widget.textStyle ?? TextStyle(
+                  style: TextStyle(
                     fontSize: 16.0,
                     color: Colors.black,
                   ),
