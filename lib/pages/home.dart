@@ -1,24 +1,26 @@
 import 'package:flutter/material.dart';
 
 class MainPage extends StatelessWidget {
+  const MainPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage('lib/assets/background.png'),
             fit: BoxFit.cover,
           ),
         ),
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
             Container(
-              padding: EdgeInsets.all(16.0),
-              margin: EdgeInsets.only(top: 32.0, bottom: 16.0),
+              padding: const EdgeInsets.all(16.0),
+              margin: const EdgeInsets.only(top: 32.0, bottom: 16.0),
               decoration: BoxDecoration(
-                gradient: LinearGradient(
+                gradient: const LinearGradient(
                   colors: [Color(0xFFeadaf2), Color(0xFFD3B2E5)],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
@@ -29,7 +31,7 @@ class MainPage extends StatelessWidget {
                   width: 2.0,
                 ),
               ),
-              child: Text(
+              child: const Text(
                 'Услышь меня, я рядом!',
                 style: TextStyle(
                   fontSize: 22.0,
@@ -37,7 +39,7 @@ class MainPage extends StatelessWidget {
                 ),
               ),
             ),
-            Spacer(),
+            const Spacer(),
             Container(
               width: double.infinity,
               decoration: BoxDecoration(
@@ -53,16 +55,16 @@ class MainPage extends StatelessWidget {
                 children: [
                   Container(
                     width: double.infinity,
-                    padding: EdgeInsets.symmetric(vertical: 8.0),
+                    padding: const EdgeInsets.symmetric(vertical: 8.0),
                     decoration: BoxDecoration(
-                      gradient: LinearGradient(
+                      gradient: const LinearGradient(
                         colors: [Color(0xFF82a1e4), Color(0xFF7294D3)],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                       ),
                       borderRadius: BorderRadius.circular(16.0),
                     ),
-                    child: Center(
+                    child: const Center(
                       child: Text(
                         'Фестиваль',
                         style: TextStyle(
@@ -72,8 +74,8 @@ class MainPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(16.0),
+                  const Padding(
+                    padding: EdgeInsets.all(16.0),
                     child: Text(
                       'Целью проекта является создание инклюзивных условий посредством реализации проекта «Фестиваль «Услышь меня, я рядом» в период с 15 марта по 15 сентября 2024 года для 200 слабослышащих, глухих людей и их родственников, ориентируясь на популяризацию мира глухих.',
                       style: TextStyle(
@@ -86,7 +88,7 @@ class MainPage extends StatelessWidget {
                 ],
               ),
             ),
-            Spacer(),
+            const Spacer(),
           ],
         ),
       ),
