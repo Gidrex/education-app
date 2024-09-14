@@ -61,10 +61,12 @@ class VideoListScreen extends StatelessWidget {
   }
   ];
 
+  VideoListScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFF3E5F5),
+      backgroundColor: const Color(0xFFF3E5F5),
       body: Stack(
         children: [
           ListView.builder(
@@ -73,17 +75,17 @@ class VideoListScreen extends StatelessWidget {
               if (index == videos.length) {
                 return Center(
                   child: Container(
-                    padding: EdgeInsets.all(16),
-                    margin: EdgeInsets.symmetric(vertical: 16),
+                    padding: const EdgeInsets.all(16),
+                    margin: const EdgeInsets.symmetric(vertical: 16),
                     decoration: BoxDecoration(
-                      gradient: LinearGradient(
+                      gradient: const LinearGradient(
                         colors: [Color(0xFFCE93D8), Color(0xFFD1C4E9)],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                       ),
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    child: Text(
+                    child: const Text(
                       'Ты молодец!! Спасибо за пройденный КУРС!)',
                       style: TextStyle(
                         fontSize: 18,
@@ -104,9 +106,9 @@ class VideoListScreen extends StatelessWidget {
                   children: [
                     Center(
                       child: Container(
-                        padding: EdgeInsets.symmetric(vertical: 4, horizontal: 12),
+                        padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 12),
                         decoration: BoxDecoration(
-                          gradient: LinearGradient(
+                          gradient: const LinearGradient(
                             colors: [Color(0xFFCE93D8), Color(0xFFD1C4E9)],
                             begin: Alignment.topLeft,
                             end: Alignment.bottomRight,
@@ -115,7 +117,7 @@ class VideoListScreen extends StatelessWidget {
                         ),
                         child: Text(
                           video['date'] ?? '',
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
                             color: Colors.black,
@@ -123,11 +125,11 @@ class VideoListScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(height: 8),
+                    const SizedBox(height: 8),
                     Container(
-                      padding: EdgeInsets.all(12),
+                      padding: const EdgeInsets.all(12),
                       decoration: BoxDecoration(
-                        gradient: LinearGradient(
+                        gradient: const LinearGradient(
                           colors: [Color(0xFFCE93D8), Color(0xFFD1C4E9)],
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
@@ -138,9 +140,9 @@ class VideoListScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
-                            padding: EdgeInsets.symmetric(vertical: 4, horizontal: 12),
+                            padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 12),
                             decoration: BoxDecoration(
-                              gradient: LinearGradient(
+                              gradient: const LinearGradient(
                                 colors: [Color(0xFFAB47BC), Color(0xFFBA68C8)],
                                 begin: Alignment.topLeft,
                                 end: Alignment.bottomRight,
@@ -149,16 +151,16 @@ class VideoListScreen extends StatelessWidget {
                             ),
                             child: Text(
                               video['time'] ?? '',
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontSize: 14,
                                 color: Colors.white,
                               ),
                             ),
                           ),
-                          SizedBox(height: 8),
+                          const SizedBox(height: 8),
                           Text(
                             video['title'] ?? '',
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
                               color: Colors.black,
@@ -166,12 +168,12 @@ class VideoListScreen extends StatelessWidget {
                           ),
                           Text(
                             'Тема: ${video['theme'] ?? ''}',
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 16,
                               color: Colors.black,
                             ),
                           ),
-                          SizedBox(height: 8),
+                          const SizedBox(height: 8),
                           AspectRatio(
                             aspectRatio: 16 / 9,
                             child: GestureDetector(
@@ -211,7 +213,7 @@ class VideoListScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    SizedBox(height: 16),
+                    const SizedBox(height: 16),
                   ],
                 ),
               );
@@ -226,14 +228,14 @@ class VideoListScreen extends StatelessWidget {
                   context: context,
                   builder: (BuildContext context) {
                     return AlertDialog(
-                      shape: RoundedRectangleBorder(
+                      shape: const RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(12.0)),
                       ),
-                      backgroundColor: Color(0xFFF3E5F5),
+                      backgroundColor: const Color(0xFFF3E5F5),
                       content: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Text(
+                          const Text(
                             'Данные курсы предназначены для волонтёров, которые хотят выучить русский жестовый язык и помогать глухим/слабослышащим людям. Обучающие курсы и фестиваль станут отправной точкой для волонтёров РЖЯ.',
                             textAlign: TextAlign.center,
                             style: TextStyle(
@@ -241,7 +243,7 @@ class VideoListScreen extends StatelessWidget {
                               color: Colors.black,
                             ),
                           ),
-                          SizedBox(height: 16),
+                          const SizedBox(height: 16),
                           ElevatedButton(
                             onPressed: () {
                               Navigator.of(context).pop();
@@ -252,7 +254,7 @@ class VideoListScreen extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(12),
                               ),
                             ),
-                            child: Text('Окей'),
+                            child: const Text('Окей'),
                           ),
                         ],
                       ),
@@ -260,8 +262,8 @@ class VideoListScreen extends StatelessWidget {
                   },
                 );
               },
-              backgroundColor: Color(0xFFAB47BC),
-              child: Icon(Icons.add, color: Colors.white),
+              backgroundColor: const Color(0xFFAB47BC),
+              child: const Icon(Icons.add, color: Colors.white),
             ),
           ),
         ],
