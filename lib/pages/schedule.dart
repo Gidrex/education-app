@@ -130,6 +130,7 @@ class _ScheduleItemState extends State<ScheduleItem> {
                       style: const TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
+                        fontSize: 16.0,
                       ),
                     ),
                   ),
@@ -138,8 +139,8 @@ class _ScheduleItemState extends State<ScheduleItem> {
                     child: Text(
                       widget.title,
                       style: const TextStyle(
-                        fontSize: 18.0,
-                        fontWeight: FontWeight.bold, // Жирный шрифт для всех title
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.bold,
                       ),
                       overflow: TextOverflow.visible,
                     ),
@@ -147,20 +148,20 @@ class _ScheduleItemState extends State<ScheduleItem> {
                 ],
               ),
               trailing: shouldExpand
-                  ? Icon(_isExpanded ? Icons.expand_less : Icons.expand_more)
-                  : null,
+              ? Icon(_isExpanded ? Icons.expand_less : Icons.expand_more)
+              : null,
             ),
             if (_isExpanded && shouldExpand)
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-                child: Text(
-                  widget.details,
-                  style: const TextStyle(
-                    fontSize: 16.0,
-                    color: Colors.black,
-                  ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+              child: Text(
+                widget.details,
+                style: const TextStyle(
+                  fontSize: 14.0,
+                  color: Colors.black,
                 ),
               ),
+            ),
           ],
         ),
       ),
