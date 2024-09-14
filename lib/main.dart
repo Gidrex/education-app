@@ -5,20 +5,22 @@ import 'pages/schedule.dart';
 import 'pages/video_list_screen.dart';
 
 void main() {
-  runApp(FestivalScheduleApp());
+  runApp(const FestivalScheduleApp());
 }
 
 class FestivalScheduleApp extends StatelessWidget {
+  const FestivalScheduleApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: BottomNavigationBarApp(),
     );
   }
 }
 
 class BottomNavigationBarApp extends StatefulWidget {
-  const BottomNavigationBarApp({Key? key}) : super(key: key);
+  const BottomNavigationBarApp({super.key});
 
   @override
   State<BottomNavigationBarApp> createState() => _BottomNavigationBarAppState();
@@ -47,7 +49,7 @@ class _BottomNavigationBarAppState extends State<BottomNavigationBarApp> {
           });
         },
         items: _navBarItems,
-        margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       ),
     );
   }

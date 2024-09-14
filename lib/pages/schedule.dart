@@ -1,12 +1,31 @@
 import 'package:flutter/material.dart';
 
+class ScheduleItem extends StatefulWidget {
+  final String time;
+  final String title;
+  final String details;
+  final TextStyle? textStyle;
+
+  const ScheduleItem({super.key, 
+    required this.time,
+    required this.title,
+    required this.details,
+    this.textStyle,
+  });
+
+  @override
+  _ScheduleItemState createState() => _ScheduleItemState();
+}
+
 class SchedulePage extends StatelessWidget {
+  const SchedulePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
-        padding: EdgeInsets.all(16.0),
-        children: [
+        padding: const EdgeInsets.all(16.0),
+        children: const [
           ScheduleItem(
             time: "11:00-11:30",
             title: 'Открытие фестиваля "Услышь меня, я рядом!"',
@@ -68,23 +87,6 @@ class SchedulePage extends StatelessWidget {
   }
 }
 
-class ScheduleItem extends StatefulWidget {
-  final String time;
-  final String title;
-  final String details;
-  final TextStyle? textStyle;
-
-  ScheduleItem({
-    required this.time,
-    required this.title,
-    required this.details,
-    this.textStyle,
-  });
-
-  @override
-  _ScheduleItemState createState() => _ScheduleItemState();
-}
-
 class _ScheduleItemState extends State<ScheduleItem> {
   bool _isExpanded = false;
 
@@ -101,7 +103,7 @@ class _ScheduleItemState extends State<ScheduleItem> {
         }
       },
       child: Container(
-        margin: EdgeInsets.only(bottom: 16.0),
+        margin: const EdgeInsets.only(bottom: 16.0),
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [Colors.purple[100]!, Colors.purple[200]!],
@@ -118,24 +120,24 @@ class _ScheduleItemState extends State<ScheduleItem> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    padding: EdgeInsets.symmetric(vertical: 4.0, horizontal: 8.0),
+                    padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 8.0),
                     decoration: BoxDecoration(
                       color: Colors.blue,
                       borderRadius: BorderRadius.circular(16.0),
                     ),
                     child: Text(
                       widget.time,
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
-                  SizedBox(height: 8.0),
+                  const SizedBox(height: 8.0),
                   Flexible(
                     child: Text(
                       widget.title,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 18.0,
                         fontWeight: FontWeight.bold, // Жирный шрифт для всех title
                       ),
@@ -153,7 +155,7 @@ class _ScheduleItemState extends State<ScheduleItem> {
                 padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                 child: Text(
                   widget.details,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 16.0,
                     color: Colors.black,
                   ),
